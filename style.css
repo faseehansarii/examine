@@ -1,0 +1,95 @@
+:root {
+    --text: #FAFAFA; --muted: #8E8E96; --border: #232327; --surface: #111113;
+    --pass: #3DDC97; --fail: #FF6B6B;
+    --font: 'Geist', system-ui, sans-serif;
+    --mono: 'Geist Mono', ui-monospace, monospace;
+}
+
+body, gradio-app { background: #09090B !important; }
+.gradio-container { width: 100% !important; max-width: 1240px !important; margin: 0 auto !important; padding: 1.5rem 2.5rem 3rem !important; font-family: var(--font) !important; }
+footer { display: none !important; }
+.html-container { padding: 0 !important; }
+
+/* Nav */
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0 1.4rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 0.95rem; color: var(--text); }
+.mark { width: 22px; height: 22px; border-radius: 6px; background: var(--text); display: grid; place-items: center; }
+.mark::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #09090B; }
+.pill {
+    display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border); border-radius: 999px; font-size: 0.8rem; color: var(--muted);
+}
+.pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--tone); box-shadow: 0 0 0 3px color-mix(in srgb, var(--tone) 25%, transparent); }
+
+/* Hero */
+.hero { padding: 2.2rem 0 2rem; }
+.hero h1 { font-weight: 600; font-size: 2.9rem; line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin: 0; }
+.hero h1 .dim { color: var(--muted); }
+.notice { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1rem; color: var(--muted); font-size: 0.85rem; }
+.notice span { padding: 0.15rem 0.55rem; border-radius: 6px; border: 1px solid var(--border); color: var(--text); font-size: 0.75rem; font-weight: 500; }
+
+/* Cards */
+.card { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 14px !important; padding: 1.4rem 1.5rem !important; }
+.card-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+.card-title h3 { font-size: 0.95rem; font-weight: 500; color: var(--text); margin: 0; letter-spacing: -0.01em; }
+.card-title small { color: var(--muted); font-size: 0.8rem; }
+
+/* Inputs */
+.field { display: flex; justify-content: space-between; align-items: baseline; }
+.field-name { color: var(--muted); font-size: 0.88rem; }
+.field-value { font-family: var(--mono); color: var(--text); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.field-value span { color: var(--muted); }
+.bare-slider { background: transparent !important; border: none !important; padding: 0 0 0.6rem !important; }
+.bare-slider .head, .bare-slider input[type=number], .bare-slider .reset-button,
+.bare-slider .min_value, .bare-slider .max_value { display: none !important; }
+
+/* Result */
+.badge {
+    display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.65rem; border-radius: 999px;
+    font-size: 0.8rem; font-weight: 500; color: var(--tone);
+    background: color-mix(in srgb, var(--tone) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tone) 30%, transparent);
+}
+.badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--tone); }
+.big { font-size: 3.6rem; font-weight: 600; letter-spacing: -0.045em; line-height: 1; color: var(--text); font-variant-numeric: tabular-nums; }
+.big-caption { color: var(--muted); font-size: 0.88rem; margin-top: 0.4rem; }
+.meter { height: 6px; border-radius: 999px; background: var(--border); margin: 1.2rem 0 1.3rem; overflow: hidden; }
+.meter > div { height: 100%; border-radius: 999px; background: var(--tone); }
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--border); }
+.stats > div { padding: 0.9rem 0 0.2rem; }
+.stats > div + div { border-left: 1px solid var(--border); padding-left: 1rem; }
+.stat-value { font-family: var(--mono); font-size: 1.05rem; color: var(--text); font-variant-numeric: tabular-nums; }
+.stat-label { color: var(--muted); font-size: 0.78rem; margin-top: 0.15rem; }
+.note { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin-top: 0.4rem; }
+.note code { color: var(--text); background: var(--border); padding: 0.1rem 0.3rem; border-radius: 4px; }
+
+/* Chart */
+.chart { background: transparent !important; border: none !important; padding: 0 !important; }
+.chart .altair, .chart .vega-embed { width: 100% !important; }
+.chart .vega-embed details { display: none !important; }
+.legend { display: flex; gap: 1.2rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+/* Tabs */
+.activity .tab-wrapper { border-bottom: 1px solid var(--border); }
+.activity button[role=tab] { font-size: 0.88rem; font-weight: 500; }
+
+/* History table */
+.history { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 0.4rem; border: none !important; }
+.history tr, .history th, .history td { border: none !important; background: transparent !important; }
+.history th { text-align: left; color: var(--muted); font-weight: 400; font-size: 0.8rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border) !important; }
+.history td { padding: 0.7rem 0; border-bottom: 1px solid var(--border) !important; color: var(--text); }
+.history td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.history td .badge { font-size: 0.75rem; padding: 0.1rem 0.55rem; }
+.clear-btn { align-self: flex-start; color: var(--muted) !important; background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; min-width: 0 !important; }
+.clear-btn:hover { color: var(--text) !important; }
+
+.footer { margin-top: 2.5rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-size: 0.8rem; }
+.footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 760px) {
+    .gradio-container { padding: 1rem 1rem 2rem !important; }
+    .hero h1 { font-size: 2.1rem; }
+    .big { font-size: 2.8rem; }
+}
