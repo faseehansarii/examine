@@ -366,11 +366,13 @@ with gr.Blocks(title="Examine", fill_width=True) as demo:
         request_code,
         response_code,
     ]
+    # always_last: while sliding, skip stale updates but always run the final value
     gr.on(
         [demo.load, hours.change, score.change],
         update,
         inputs=[hours, score, history],
         outputs=outputs,
+        trigger_mode="always_last",
     )
     clear.click(clear_history, outputs=[history, history_html])
 

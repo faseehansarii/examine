@@ -42,6 +42,22 @@ footer { display: none !important; }
 .bare-slider { background: transparent !important; border: none !important; padding: 0 0 0.6rem !important; }
 .bare-slider .head, .bare-slider input[type=number], .bare-slider .reset-button,
 .bare-slider .min_value, .bare-slider .max_value { display: none !important; }
+/* Track: white up to the knob, dark grey after it */
+.bare-slider input[type=range] { height: 14px !important; background: transparent !important; }
+.bare-slider input[type=range]::-webkit-slider-runnable-track {
+    height: 4px !important; border-radius: 999px;
+    background: linear-gradient(to right, var(--text) var(--range_progress), var(--border) var(--range_progress)) !important;
+}
+.bare-slider input[type=range]::-moz-range-track { height: 4px !important; border-radius: 999px; background: var(--border) !important; }
+.bare-slider input[type=range]::-moz-range-progress { height: 4px !important; border-radius: 999px; background: var(--text) !important; }
+.bare-slider input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 14px !important; height: 14px !important; margin-top: -5px !important;
+    border-radius: 50%; background: var(--text) !important; border: 2px solid var(--surface) !important; box-shadow: none !important;
+}
+.bare-slider input[type=range]::-moz-range-thumb {
+    width: 14px !important; height: 14px !important; border-radius: 50%;
+    background: var(--text) !important; border: 2px solid var(--surface) !important; box-shadow: none !important;
+}
 
 /* Result */
 .badge {
